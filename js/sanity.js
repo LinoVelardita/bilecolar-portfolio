@@ -74,7 +74,7 @@ const SanityClient = {
             {
                 _id: "w3",
                 title: "I'm learning...",
-                section: "A/V",
+                section: "av",
                 description: "Performance Audio/Video interattiva che indaga l'apprendimento computazionale e il rapporto percettivo uomo-macchina tramite frammenti video e sintesi granulare in tempo reale.",
                 link: "https://instagram.com/bilecolar",
                 coverUrl: "asset/pics/learning.png"

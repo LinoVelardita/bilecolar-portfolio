@@ -177,6 +177,10 @@ button {
     mix-blend-mode: exclusion;
 }
 
+body:not(.is-homepage) .site-header {
+    position: absolute;
+}
+
 .header-brand {
     display: flex;
     flex-direction: column;
@@ -293,6 +297,10 @@ button {
     display: flex;
     align-items: center;
     gap: 1.4rem;
+}
+
+body:not(.is-homepage) .fixed-contacts {
+    position: absolute;
 }
 
 .social-icon-link {
