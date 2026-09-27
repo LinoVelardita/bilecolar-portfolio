@@ -1,0 +1,17 @@
+# Environment / secrets
+.env
+portfolio.env
+
+# Local agent/tool files
+.agents/
+
+# Project notes / internal documentation
+AUDIT.md
+spec.md
+walkthrough.md
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilecolar — Sound Designer & Music Producer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-homepage">
+
+    <!-- 1. BACKGROUND VIDEO -->
+    <div class="bg-video-container">
+        <video class="bg-video" id="bg-video" autoplay muted loop playsinline preload="auto">
+            <source src="asset/background_video/background_lp.mp4" type="video/mp4">
+        </video>
+        <div class="bg-overlay"></div>
+    </div>
+
+    <!-- 2. HEADER & NAVIGATION -->
+    <header class="site-header">
+        <div class="header-brand">
+            <a href="#home" class="site-title home-text-blend">Bilecolar</a>
+            <div class="header-subtitle home-text-blend">
+                Sound Designer <br>Music Producer
+            </div>
+        </div>
+
+        <div class="header-top-row">
+            <!-- Desktop Nav Menu -->
+            <nav class="desktop-nav">
+                <a href="#home" class="nav-link home-text-blend">Home</a>
+                <a href="#about" class="nav-link home-text-blend">About</a>
+                <a href="#works" class="nav-link home-text-blend" data-trigger="works-overlay">Works</a>
+                <a href="#contacts" class="nav-link home-text-blend">Contacts</a>
+
+                <button type="button" class="search-trigger-btn home-text-blend" id="search-trigger-btn" aria-label="Cerca">
+                    <svg class="search-icon-svg" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
+                    </svg>
+                </button>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button type="button" class="hamburger-btn home-text-blend" id="hamburger-btn" aria-label="Menu Mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+        <div class="header-subtitle home-text-blend">
+      
+        </div>
+    </header>
+
+    <!-- 3. FIXED CONTACT ICONS (Bottom-Left) -->
+    <aside class="fixed-contacts">
+        <a href="https://www.instagram.com/bilecolar/" target="_blank" rel="noopener" class="social-icon-link home-text-blend" aria-label="Instagram">
+            <img src="asset/icons/instagram.svg" alt="Instagram" class="social-icon-img">
+        </a>
+        <a href="https://soundcloud.com/brunocusumano" target="_blank" rel="noopener" class="social-icon-link home-text-blend" aria-label="SoundCloud">
+            <img src="asset/icons/soundcloud.svg" alt="SoundCloud" class="social-icon-img">
+        </a>
+        <a href="https://bandcamp.com/bilecolar" target="_blank" rel="noopener" class="social-icon-link home-text-blend" aria-label="Bandcamp">
+            <img src="asset/icons/bandcamp.svg" alt="Bandcamp" class="social-icon-img">
+        </a>
+        <a href="mailto:brunocusumano27@gmail.com" class="social-icon-link home-text-blend" aria-label="Email">
+            <img src="asset/icons/gmail.svg" alt="Email" class="social-icon-img">
+        </a>
+    </aside>
+
+    <!-- 4. WORKS FULLSCREEN OVERLAY (Desktop & Mobile trigger) -->
+    <div class="fullscreen-overlay" id="works-overlay">
+        <div class="overlay-content">
+            <a href="#works/acousmatic" class="overlay-nav-link" data-action="close-overlay">Acousmatic</a>
+            <a href="#works/av" class="overlay-nav-link" data-action="close-overlay">A/V</a>
+            <a href="#works/release" class="overlay-nav-link" data-action="close-overlay">Release</a>
+            <button type="button" class="overlay-back-btn" data-action="close-overlay">← BACK</button>
+        </div>
+    </div>
+
+    <!-- 5. MOBILE MENU FULLSCREEN OVERLAY -->
+    <div class="fullscreen-overlay" id="mobile-menu-overlay">
+        <div class="overlay-content">
+            <a href="#home" class="overlay-nav-link" data-action="close-overlay">Home</a>
+            <a href="#about" class="overlay-nav-link" data-action="close-overlay">About</a>
+            <a href="#works" class="overlay-nav-link" data-trigger="works-overlay">Works</a>
+            <a href="#contacts" class="overlay-nav-link" data-action="close-overlay">Contacts</a>
+            <button type="button" class="overlay-back-btn" data-action="close-overlay">← chiudi</button>
+        </div>
+    </div>
+
+    <!-- 6. SEARCH MODAL WITH AUTOCOMPLETE -->
+    <div class="search-modal-overlay" id="search-modal">
+        <div class="search-box-container">
+            <input type="text" id="search-input" class="search-input-field" placeholder="Cerca nel portfolio (titoli, progetti, bio)..." autocomplete="off">
+            <button type="button" class="search-close-btn" id="search-close-btn" aria-label="Chiudi ricerca">✕</button>
+            <div class="search-results-dropdown" id="search-results"></div>
+        </div>
+    </div>
+
+    <!-- 7. MAIN VIEWS (PAGE SECTIONS) -->
+    <main>
+        <!-- Home Hero View -->
+        <section id="view-home" class="view-section active-view">
+            <!-- Background video & fixed header create the clean minimal homepage layout -->
+        </section>
+
+        <!-- About View -->
+        <section id="view-about" class="view-section">
+            <h1 class="section-headline">About</h1>
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <img id="bio-img" src="asset/pics/foto_bio.jpg" alt="Bruno Cusumano - Bilecolar" class="about-img">
+                </div>
+                <div class="about-text-content" id="bio-text-container">
+                    <p class="about-bio-paragraph">
+                        Bruno Cusumano, in arte Bilecolar, è un Sound Designer e Music Producer la cui ricerca esplora i territori dell'acustica spaziale, del sound design sperimentale per arti visive e della composizione acusmatica.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works View -->
+        <section id="view-works" class="view-section">
+            <h1 class="section-headline">Works</h1>
+            <div class="works-header-nav">
+                <button type="button" class="works-tab-btn active" data-tab="all">Tutti i Progetti</button>
+                <button type="button" class="works-tab-btn" data-tab="acousmatic">Acousmatic</button>
+                <button type="button" class="works-tab-btn" data-tab="av">A/V</button>
+                <button type="button" class="works-tab-btn" data-tab="release">Release</button>
+            </div>
+            <div class="works-collection-grid" id="works-grid">
+                <!-- Works items populated dynamically via Sanity API -->
+            </div>
+        </section>
+
+        <!-- Contacts View -->
+        <section id="view-contacts" class="view-section">
+            <h1 class="section-headline">Contacts</h1>
+            <div class="contacts-wrapper">
+                <div class="contacts-info">
+                    <p class="contact-text-intro">
+                        Disponibile per collaborazioni in progetti di Sound Design, performance Audio/Video, colonne sonore e produzioni musicali.
+                    </p>
+                    <div class="contact-links-list">
+                        <a href="mailto:brunocusumano27@gmail.com" class="contact-item-row">
+                            <img src="asset/icons/gmail.svg" alt="Email" class="contact-item-icon">
+                            <span>brunocusumano27@gmail.com</span>
+                        </a>
+                        <a href="https://www.instagram.com/bilecolar/" target="_blank" rel="noopener" class="contact-item-row">
+                            <img src="asset/icons/instagram.svg" alt="Instagram" class="contact-item-icon">
+                            <span>@bilecolar</span>
+                        </a>
+                        <a href="https://soundcloud.com/brunocusumano" target="_blank" rel="noopener" class="contact-item-row">
+                            <img src="asset/icons/soundcloud.svg" alt="SoundCloud" class="contact-item-icon">
+                            <span>soundcloud.com/brunocusumano</span>
+                        </a>
+                        <a href="https://bandcamp.com/bilecolar" target="_blank" rel="noopener" class="contact-item-row">
+                            <img src="asset/icons/bandcamp.svg" alt="Bandcamp" class="contact-item-icon">
+                            <span>bandcamp.com/bilecolar</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Collaboration Request Form -->
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nome / Organizzazione</label>
+                        <input type="text" id="name" name="name" class="form-input" required placeholder="Il tuo nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email di Contatto</label>
+                        <input type="email" id="email" name="email" class="form-input" required placeholder="latuaemail@esempio.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="project-type" class="form-label">Tipologia di Progetto</label>
+                        <select id="project-type" name="project_type" class="form-select">
+                            <option value="sound_design">Sound Design / Composizione</option>
+                            <option value="av_performance">Performance Audio / Video</option>
+                            <option value="release">Release / Produzione Discografica</option>
+                            <option value="other">Altro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Messaggio</label>
+                        <textarea id="message" name="message" class="form-textarea" required placeholder="Descrivi brevemente la tua richiesta o idea di collaborazione..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Invia Richiesta</button>
+                    <div id="form-status" class="form-status-msg"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="js/config.js"></script>
+    <script src="js/sanity.js"></script>
+    <script src="js/app.js"></script>
+
+   
+</body>
+</html>
