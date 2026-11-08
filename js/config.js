@@ -1,6 +1,6 @@
 /* Sanity API Configuration - Dynamic credentials from environment */
 const SANITY_CONFIG = {
-    projectId: '',
+    projectId: '1f99tgsv',
     dataset: 'production',
     apiVersion: '2023-01-01',
     useCdn: true

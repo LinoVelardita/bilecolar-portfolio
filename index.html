@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilecolar — Sound Designer & Music Producer</title>
+    <title>bilecolar — Sound Designer & Music Producer</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="is-homepage">
 
     <!-- 1. BACKGROUND VIDEO -->
@@ -19,7 +21,7 @@
     <!-- 2. HEADER & NAVIGATION -->
     <header class="site-header">
         <div class="header-brand">
-            <a href="#home" class="site-title home-text-blend">Bilecolar</a>
+            <a href="#home" class="site-title home-text-blend">bilecolar</a>
             <div class="header-subtitle home-text-blend">
                 Sound Designer <br>Music Producer
             </div>
@@ -31,9 +33,11 @@
                 <a href="#home" class="nav-link home-text-blend">Home</a>
                 <a href="#about" class="nav-link home-text-blend">About</a>
                 <a href="#works" class="nav-link home-text-blend" data-trigger="works-overlay">Works</a>
+                <a href="#agenda" class="nav-link home-text-blend">Agenda</a>
                 <a href="#contacts" class="nav-link home-text-blend">Contacts</a>
 
-                <button type="button" class="search-trigger-btn home-text-blend" id="search-trigger-btn" aria-label="Cerca">
+                <button type="button" class="search-trigger-btn home-text-blend" id="search-trigger-btn"
+                    aria-label="Cerca">
                     <svg class="search-icon-svg" viewBox="0 0 24 24">
                         <circle cx="11" cy="11" r="7"></circle>
                         <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
@@ -52,13 +56,16 @@
 
     <!-- 3. FIXED CONTACT ICONS (Bottom-Left) -->
     <aside class="fixed-contacts">
-        <a href="https://www.instagram.com/bilecolar/" target="_blank" rel="noopener" class="social-icon-link home-text-blend" aria-label="Instagram">
+        <a href="https://www.instagram.com/bilecolar/" target="_blank" rel="noopener noreferrer"
+            class="social-icon-link home-text-blend" aria-label="Instagram">
             <img src="asset/icons/instagram.svg" alt="Instagram" class="social-icon-img">
         </a>
-        <a href="https://soundcloud.com/brunocusumano" target="_blank" rel="noopener" class="social-icon-link home-text-blend" aria-label="SoundCloud">
+        <a href="https://on.soundcloud.com/YxACer4QDmnk7pfU3M" target="_blank" rel="noopener noreferrer"
+            class="social-icon-link home-text-blend" aria-label="SoundCloud">
             <img src="asset/icons/soundcloud.svg" alt="SoundCloud" class="social-icon-img">
         </a>
-        <a href="https://bandcamp.com/bilecolar" target="_blank" rel="noopener" class="social-icon-link home-text-blend" aria-label="Bandcamp">
+        <a href="https://bandcamp.com/bilecolar" target="_blank" rel="noopener noreferrer"
+            class="social-icon-link home-text-blend" aria-label="Bandcamp">
             <img src="asset/icons/bandcamp.svg" alt="Bandcamp" class="social-icon-img">
         </a>
         <a href="mailto:brunocusumano27@gmail.com" class="social-icon-link home-text-blend" aria-label="Email">
@@ -68,29 +75,39 @@
 
     <!-- 4. WORKS FULLSCREEN OVERLAY (Desktop & Mobile trigger) -->
     <div class="fullscreen-overlay" id="works-overlay">
+        <button type="button" class="overlay-close-btn" data-action="close-overlay" aria-label="Chiudi">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <div class="overlay-content">
             <a href="#works/acousmatic" class="overlay-nav-link" data-action="close-overlay">Acousmatic</a>
             <a href="#works/av" class="overlay-nav-link" data-action="close-overlay">A/V</a>
             <a href="#works/release" class="overlay-nav-link" data-action="close-overlay">Release</a>
-            <button type="button" class="overlay-back-btn" data-action="close-overlay">← BACK</button>
         </div>
     </div>
 
     <!-- 5. MOBILE MENU FULLSCREEN OVERLAY -->
     <div class="fullscreen-overlay" id="mobile-menu-overlay">
+        <button type="button" class="overlay-close-btn" data-action="close-overlay" aria-label="Chiudi">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <div class="overlay-content">
             <a href="#home" class="overlay-nav-link" data-action="close-overlay">Home</a>
             <a href="#about" class="overlay-nav-link" data-action="close-overlay">About</a>
             <a href="#works" class="overlay-nav-link" data-trigger="works-overlay">Works</a>
+            <a href="#agenda" class="overlay-nav-link" data-action="close-overlay">Agenda</a>
             <a href="#contacts" class="overlay-nav-link" data-action="close-overlay">Contacts</a>
-            <button type="button" class="overlay-back-btn" data-action="close-overlay">← chiudi</button>
         </div>
     </div>
 
     <!-- 6. SEARCH MODAL WITH AUTOCOMPLETE -->
     <div class="search-modal-overlay" id="search-modal">
         <div class="search-box-container">
-            <input type="text" id="search-input" class="search-input-field" placeholder="Cerca nel portfolio (titoli, progetti, bio)..." autocomplete="off">
+            <input type="text" id="search-input" class="search-input-field"
+                placeholder="Cerca nel portfolio (titoli, progetti, bio)..." autocomplete="off">
             <button type="button" class="search-close-btn" id="search-close-btn" aria-label="Chiudi ricerca">✕</button>
             <div class="search-results-dropdown" id="search-results"></div>
         </div>
@@ -112,7 +129,9 @@
                 </div>
                 <div class="about-text-content" id="bio-text-container">
                     <p class="about-bio-paragraph">
-                        Bruno Cusumano, in arte Bilecolar, è un Sound Designer e Music Producer la cui ricerca esplora i territori dell'acustica spaziale, del sound design sperimentale per arti visive e della composizione acusmatica.
+                        Bruno Cusumano, in arte bilecolar, è un Sound Designer e Music Producer la cui ricerca esplora i
+                        territori dell'acustica spaziale, del sound design sperimentale per arti visive e della
+                        composizione acusmatica.
                     </p>
                 </div>
             </div>
@@ -122,13 +141,126 @@
         <section id="view-works" class="view-section">
             <h1 class="section-headline">Works</h1>
             <div class="works-header-nav">
-                <button type="button" class="works-tab-btn active" data-tab="all">Tutti i Progetti</button>
-                <button type="button" class="works-tab-btn" data-tab="acousmatic">Acousmatic</button>
+                <button type="button" class="works-tab-btn active" data-tab="acousmatic">Acousmatic</button>
                 <button type="button" class="works-tab-btn" data-tab="av">A/V</button>
                 <button type="button" class="works-tab-btn" data-tab="release">Release</button>
             </div>
             <div class="works-collection-grid" id="works-grid">
                 <!-- Works items populated dynamically via Sanity API -->
+            </div>
+        </section>
+
+        <!-- Agenda View -->
+        <section id="view-agenda" class="view-section">
+            <h1 class="section-headline">Agenda</h1>
+            <div class="agenda-container">
+
+                <h2 class="agenda-year-heading">2026</h2>
+                <ul class="agenda-list">
+                    <li class="agenda-item">13/11 • <a href="https://www.noislashe.com/day-1" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Noise//e</a>, Milano (IT), I’m learning…,
+                        screening</li>
+                    <li class="agenda-item">27/10 • <a href="https://consbo.it/martini-elettrico-2026/" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Martini Elettrico</a>, Conservatorio G.B.
+                        Martini, Bologna (IT), ORA ET SONORA, sound installation</li>
+                    <li class="agenda-item">27/09 • <a
+                            href="https://apnees.wordpress.com/2026/08/09/resultats-results-appel-a-oeuvres-call-for-works-paysages-composes-2026/"
+                            target="_blank" rel="noopener noreferrer" class="agenda-link">PAYSAGES | COMPOSÉS 2026</a>,
+                        APNÈES, Grenoble (FR), Brassage, acousmatic</li>
+                    <li class="agenda-item">26/09 • Sintonie, <a href="https://fillamontagnola.it/" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Auditorium Filla</a>, Bologna (IT), I’m
+                        learning…, screening</li>
+                    <li class="agenda-item">08/06 • Riccardo Mazza, Conservatorio G.B. Martini, Bologna (IT), <a
+                            href="https://consbo.it/masterclass-mazza/" target="_blank" rel="noopener noreferrer"
+                            class="agenda-link">Dolby Atmos for electroacoustic music</a>, masterclass</li>
+                    <li class="agenda-item">09/05 • Marginale, <a href="https://www.instagram.com/napolitotale/"
+                            target="_blank" rel="noopener noreferrer" class="agenda-link">Napoli Totale</a>, Opificio
+                        Puca, Sant’Arpinio (IT), <a href="https://bilecolar.bandcamp.com/track/brassage" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Brassage</a>, acousmatic</li>
+                    <li class="agenda-item">11/O4 • <a href="https://www.instagram.com/antro_torino/" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">ANTRO</a>, Torino (IT), I’m learning…,
+                        screening</li>
+                    <li class="agenda-item">11/04 • Marco Giordano, Artificial Intelligence for sound, masterclass</li>
+                    <li class="agenda-item">20/03 • Magnetca 2026, <a
+                            href="https://www.instagram.com/temporealefirenze/" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Tempo Reale</a>, Firenze (IT), <a
+                            href="https://bilecolar.bandcamp.com/track/brassage" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Brassage</a>, acousmatic</li>
+                    <li class="agenda-item">14/02 • <a href="https://www.instagram.com/suonoforma/" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Suonoforma</a>, Conservatorio G.B. Martini,
+                        Bologna (IT), <a href="https://bilecolar.bandcamp.com/track/brassage" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Brassage</a>, acousmatic</li>
+                    <li class="agenda-item">08/02 • <a href="https://www.instagram.com/manipulsanti/" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Mani Pulsanti</a> x Art City, Bologna (IT),
+                        I’m learning…, screening</li>
+                    <li class="agenda-item">03/02 • <a href="https://consbo.it/masterclass-wishart/" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Trevor Wishart</a>, Conservatorio G.B.
+                        Martini, Bologna (IT), masterclass</li>
+                    <li class="agenda-item">24/01 • <a href="https://consbo.it/low-connection/" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Low Connection</a>, Conservatorio G.B.
+                        Martini, Bologna (IT), AV live [w/Paolo Ravaglia, Alessandro Ratoci], live</li>
+                </ul>
+
+                <h2 class="agenda-year-heading">2025</h2>
+                <ul class="agenda-list">
+                    <li class="agenda-item">14/12 • <a href="https://www.instagram.com/suonoforma/" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Suonoforma</a>, Conservatorio G.B. Martini,
+                        Bologna (IT), <a href="https://bilecolar.bandcamp.com/track/sinestesia-1" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Sinestesia #1</a>, acousmatic</li>
+                    <li class="agenda-item">13/12 • <a href="https://www.audio.art.pl/2025/" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Audio Art Festival</a>, <a
+                            href="https://audio.art.pl/2025/PSeME_CIME2.pdf" target="_blank" rel="noopener noreferrer"
+                            class="agenda-link">PSeMe/CIME</a>, Krakòw (PL), <a
+                            href="https://bilecolar.bandcamp.com/track/sinestesia-1" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Sinestesia #1</a>, acousmatic</li>
+                    <li class="agenda-item">22/11 • <a
+                            href="https://www.delloscompiglio.org/it/calendario.html?task=view_event&amp;event_id=1102"
+                            target="_blank" rel="noopener noreferrer" class="agenda-link">Dello Scompiglio</a>,
+                        Capannori (IT), AV live [w/Paolo Ravaglia], live</li>
+                    <li class="agenda-item">08/06 • <a href="https://consbo.it/suono-domenica-2025/" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Suono Domenica 2025</a>, Conservatorio G.B.
+                        Martini, Bologna (IT), <a href="https://vimeo.com/1160273780?share=copy&amp;fl=sv&amp;fe=ci"
+                            target="_blank" rel="noopener noreferrer" class="agenda-link">I’m learning…</a>, screening
+                    </li>
+                    <li class="agenda-item">04/06 • Maggio Elettrico, <a
+                            href="https://www.instagram.com/temporealefirenze/" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Tempo Reale</a>, Firenze (IT), <a
+                            href="https://bilecolar.bandcamp.com/track/sinestesia-1" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Sinestesia #1</a>, acousmatic</li>
+                    <li class="agenda-item">03/05 • Giuseppe Silvi, Towards a tetrahedral thought, masterclass</li>
+                    <li class="agenda-item">16/04 • Enrico Pietrocola, Networking tools for electronic music,
+                        masterclass</li>
+                    <li class="agenda-item">15/03 • Magnetica 2025, <a
+                            href="https://www.instagram.com/temporealefirenze/" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Tempo Reale</a>, Firenze (IT), <a
+                            href="https://bilecolar.bandcamp.com/track/sinestesia-1" target="_blank"
+                            rel="noopener noreferrer" class="agenda-link">Sinestesia #1</a>, acousmatic</li>
+                    <li class="agenda-item">08/03 • <a href="https://consbo.it/masterclass-di-massimo-pupillo/"
+                            target="_blank" rel="noopener noreferrer" class="agenda-link">Massimo Pupillo</a>,
+                        Conservatorio G.B. Martini, Bologna (IT), masterclass</li>
+                </ul>
+
+                <h2 class="agenda-year-heading">2024</h2>
+                <ul class="agenda-list">
+                    <li class="agenda-item">31/09-01/10 • Daniele Ghisi, Real-time Assisted Composition with Max and
+                        Bach, masterclass</li>
+                    <li class="agenda-item">21/04 • <a
+                            href="https://musicommission.emiliaromagnacultura.it/news/suono-domenica-dodici-ore-musica-ricerca/"
+                            target="_blank" rel="noopener noreferrer" class="agenda-link">Suono Domenica 2024</a>,
+                        Conservatorio G.B. Martini, Bologna (IT), Sequenza Kammer, live</li>
+                    <li class="agenda-item">18/04 • Digital Civitas - Pesaro 2024, <a
+                            href="https://www.instagram.com/quicampobase/" target="_blank" rel="noopener noreferrer"
+                            class="agenda-link">Campobase SRL</a>, Pesaro (IT), Soundscape Composition, residency</li>
+                    <li class="agenda-item">29/02 • Alessandro Cipriani, masterclass</li>
+                </ul>
+
+                <h2 class="agenda-year-heading">2022</h2>
+                <ul class="agenda-list">
+                    <li class="agenda-item">05/10 • ROBOT Festival - Scratch Party, Bologna (IT), electroacoustic and
+                        visual improvisation, live</li>
+                    <li class="agenda-item">16-17/05 • Manuel Zurria, Multimedia e Performance, masterclass</li>
+                </ul>
+
             </div>
         </section>
 
@@ -138,22 +270,26 @@
             <div class="contacts-wrapper">
                 <div class="contacts-info">
                     <p class="contact-text-intro">
-                        Disponibile per collaborazioni in progetti di Sound Design, performance Audio/Video, colonne sonore e produzioni musicali.
+                        Disponibile per collaborazioni in progetti di Sound Design, performance Audio/Video, colonne
+                        sonore e produzioni musicali.
                     </p>
                     <div class="contact-links-list">
                         <a href="mailto:brunocusumano27@gmail.com" class="contact-item-row">
                             <img src="asset/icons/gmail.svg" alt="Email" class="contact-item-icon">
                             <span>brunocusumano27@gmail.com</span>
                         </a>
-                        <a href="https://www.instagram.com/bilecolar/" target="_blank" rel="noopener" class="contact-item-row">
+                        <a href="https://www.instagram.com/bilecolar/" target="_blank" rel="noopener noreferrer"
+                            class="contact-item-row">
                             <img src="asset/icons/instagram.svg" alt="Instagram" class="contact-item-icon">
                             <span>@bilecolar</span>
                         </a>
-                        <a href="https://soundcloud.com/brunocusumano" target="_blank" rel="noopener" class="contact-item-row">
+                        <a href="https://on.soundcloud.com/YxACer4QDmnk7pfU3M" target="_blank" rel="noopener noreferrer"
+                            class="contact-item-row">
                             <img src="asset/icons/soundcloud.svg" alt="SoundCloud" class="contact-item-icon">
-                            <span>soundcloud.com/brunocusumano</span>
+                            <span>on.soundcloud.com/YxACer4QDmnk7pfU3M</span>
                         </a>
-                        <a href="https://bandcamp.com/bilecolar" target="_blank" rel="noopener" class="contact-item-row">
+                        <a href="https://bandcamp.com/bilecolar" target="_blank" rel="noopener noreferrer"
+                            class="contact-item-row">
                             <img src="asset/icons/bandcamp.svg" alt="Bandcamp" class="contact-item-icon">
                             <span>bandcamp.com/bilecolar</span>
                         </a>
@@ -168,7 +304,8 @@
                     </div>
                     <div class="form-group">
                         <label for="email" class="form-label">Email di Contatto</label>
-                        <input type="email" id="email" name="email" class="form-input" required placeholder="latuaemail@esempio.com">
+                        <input type="email" id="email" name="email" class="form-input" required
+                            placeholder="latuaemail@esempio.com">
                     </div>
                     <div class="form-group">
                         <label for="project-type" class="form-label">Tipologia di Progetto</label>
@@ -181,7 +318,8 @@
                     </div>
                     <div class="form-group">
                         <label for="message" class="form-label">Messaggio</label>
-                        <textarea id="message" name="message" class="form-textarea" required placeholder="Descrivi brevemente la tua richiesta o idea di collaborazione..."></textarea>
+                        <textarea id="message" name="message" class="form-textarea" required
+                            placeholder="Descrivi brevemente la tua richiesta o idea di collaborazione..."></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Invia Richiesta</button>
                     <div id="form-status" class="form-status-msg"></div>
@@ -195,6 +333,7 @@
     <script src="js/sanity.js"></script>
     <script src="js/app.js"></script>
 
-   
+
 </body>
+
 </html>

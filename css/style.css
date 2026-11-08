@@ -161,6 +161,19 @@ button {
     /*mix-blend-mode: luminosity;  --> rimosso: fuori sta stacking context*/ 
 }
 
+/* 5b. SECTION HEADLINE VISIBILITY — hide main section titles (§4.5) */
+.section-headline {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* 6. HEADER & DESKTOP NAVIGATION */
 .site-header {
     position: fixed;
@@ -196,12 +209,15 @@ body:not(.is-homepage) .site-header {
 }
 
 .site-title {
-    font-size: 4.4rem;
+    font-size: clamp(2rem, 8vw, 4.4rem);
     font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1;
-    text-transform: uppercase;
+    text-transform: lowercase;
     cursor: pointer;
+    max-width: calc(100vw - 6rem); /* leave room for hamburger */
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .desktop-nav {
@@ -340,13 +356,79 @@ body:not(.is-homepage) .fixed-contacts {
     justify-content: center;
     align-items: center;
     transform: translateX(100%);
-    transition: transform var(--transition-overlay);
+    transition: transform var(--transition-overlay), visibility var(--transition-overlay);
     visibility: hidden;
+    pointer-events: none;
 }
 
 .fullscreen-overlay.active {
     transform: translateX(0);
     visibility: visible;
+    pointer-events: auto;
+}
+
+#mobile-menu-overlay {
+    z-index: 1000;
+}
+
+#works-overlay {
+    z-index: 1001;
+}
+
+/* Exit animation class: reverse slide out to the right (§8) */
+.fullscreen-overlay.is-closing {
+    transform: translateX(100%);
+    visibility: visible;
+    pointer-events: none;
+}
+
+/* Close button with X icon (matching mobile hamburger style) */
+.overlay-close-btn {
+    position: absolute;
+    top: 2.5rem;
+    right: 3.5rem;
+    width: 28px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1010;
+    pointer-events: auto;
+    padding: 0;
+}
+
+.overlay-close-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-text-static);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color var(--transition-fast);
+}
+
+.overlay-close-btn span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.overlay-close-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.overlay-close-btn span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.overlay-close-btn:hover span {
+    background-color: var(--color-accent);
+}
+
+body:has(.fullscreen-overlay.active) .hamburger-btn,
+body.overlay-open .hamburger-btn {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .overlay-content {
@@ -393,7 +475,7 @@ body:not(.is-homepage) .fixed-contacts {
 .view-section {
     display: none;
     min-height: 100vh;
-    padding: 10rem 3.5rem 6rem 3.5rem;
+    padding: 12rem 3.5rem 6rem 3.5rem;
     max-width: var(--container-max);
     margin: 0 auto;
     position: relative;
@@ -439,17 +521,20 @@ body:not(.is-homepage) .fixed-contacts {
     height: auto;
     display: block;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Zoom effect removed per §4.2 */
 }
 
-.about-image-wrapper:hover .about-img {
-    transform: scale(1.03);
-}
+/* Hover zoom removed per §4.2: .about-image-wrapper:hover .about-img { transform: scale(1.03); } */
 
 .about-text-content {
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .section-headline {
@@ -504,6 +589,7 @@ body:not(.is-homepage) .fixed-contacts {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     gap: 2.5rem;
+    align-items: start;
 }
 
 .work-card {
@@ -514,42 +600,50 @@ body:not(.is-homepage) .fixed-contacts {
     display: flex;
     flex-direction: column;
     transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+    cursor: pointer;
 }
 
 .work-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
     border-color: rgba(197, 240, 225, 0.4);
     box-shadow: 0 16px 32px rgba(0,0,0,0.5);
 }
 
+.work-card:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* §4.1 Proportional dimensions, no crop, object-fit: contain */
 .work-cover-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 75%; /* 4:3 Aspect ratio */
-    overflow: hidden;
     background: #121215;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .work-cover-img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.4s ease;
 }
 
 .work-card:hover .work-cover-img {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
-.work-details {
-    padding: 1.8rem;
+/* Card Header — always visible */
+.work-card-header {
+    padding: 1.2rem 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
-    flex-grow: 1;
+    gap: 0.4rem;
 }
 
 .work-section-tag {
@@ -561,34 +655,134 @@ body:not(.is-homepage) .fixed-contacts {
 }
 
 .work-title {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: -0.01em;
     line-height: 1.2;
 }
 
-.work-description {
-    font-size: 0.98rem;
-    line-height: 1.6;
-    color: var(--color-text-muted);
-    font-weight: 300;
+/* §5 Expandable details: hidden initially, expanded on click */
+.work-expandable {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-card.is-expanded .work-expandable {
+    grid-template-rows: 1fr;
+}
+
+.work-expandable-inner {
+    overflow: hidden;
+}
+
+.work-details {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 1rem;
     margin-top: 0.2rem;
 }
 
+.work-date {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    letter-spacing: 0.03em;
+}
+
+.work-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(244, 244, 245, 0.85);
+    font-weight: 300;
+}
+
 .work-link {
-    margin-top: auto;
-    padding-top: 1rem;
+    margin-top: 0.5rem;
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--color-accent);
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    transition: gap var(--transition-fast);
+    transition: gap var(--transition-fast), color var(--transition-fast);
 }
 
 .work-link:hover {
     gap: 0.7rem;
+    color: #fff;
+}
+
+.work-link:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* 11b. AGENDA PAGE (§6) */
+.agenda-container {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.agenda-year-heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--color-accent);
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-top: 1rem;
+}
+
+.agenda-year-heading:first-child {
+    margin-top: 0;
+}
+
+.agenda-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.agenda-item {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: rgba(244, 244, 245, 0.9);
+    font-weight: 400;
+    padding-left: 0.5rem;
+    position: relative;
+    border-left: 2px solid transparent;
+    transition: border-color var(--transition-fast);
+}
+
+.agenda-item:hover {
+    border-left-color: var(--color-accent);
+}
+
+/* Links in Agenda — distinct style, maintains Neue Montreal (§6.2) */
+.agenda-link {
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    display: inline;
+}
+
+.agenda-link:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.agenda-link:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 /* 12. CONTACTS PAGE */
@@ -844,29 +1038,46 @@ body:not(.is-homepage) .fixed-contacts {
 /* 14. RESPONSIVE BREAKPOINTS (MOBILE & TABLET) */
 @media (max-width: 900px) {
     .site-header {
-        padding: 1.8rem 1.8rem 1rem 1.8rem;
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
     }
 
     .desktop-nav {
         display: none;
     }
 
+    .overlay-close-btn {
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+
     .hamburger-btn {
         display: flex;
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 1002;
+    }
+
+    .header-brand {
+        max-width: calc(100vw - 4.5rem); /* prevent title from overlapping hamburger */
     }
 
     .fixed-contacts {
-        left: 1.8rem;
-        bottom: 1.8rem;
+        left: 1.5rem;
+        bottom: 1.5rem;
     }
 
     .view-section {
-        padding: 8rem 1.8rem 5rem 1.8rem;
+        padding: 9.5rem 1.5rem 5rem 1.5rem;
     }
 
     .about-grid, .contacts-wrapper {
         grid-template-columns: 1fr;
         gap: 2.5rem;
+    }
+
+    .about-text-content {
+        padding: 1.8rem;
     }
 
     .works-collection-grid {
@@ -878,14 +1089,73 @@ body:not(.is-homepage) .fixed-contacts {
     }
 
     .overlay-nav-link {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
     }
 
     .site-title {
-        font-size: 4.4rem;
+        font-size: clamp(2rem, 7.5vw, 3.2rem);
+        max-width: 100%;
     }
 
     .header-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
+    }
+
+    .agenda-year-heading {
+        font-size: 1.8rem;
+    }
+
+    .agenda-item {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 1.2rem 1.2rem 0.8rem 1.2rem;
+    }
+
+    .overlay-close-btn {
+        top: 1.2rem;
+        right: 1.2rem;
+    }
+
+    .hamburger-btn {
+        top: 1.2rem;
+        right: 1.2rem;
+    }
+
+    .header-brand {
+        max-width: calc(100vw - 4rem);
+    }
+
+    .site-title {
+        font-size: clamp(1.8rem, 7vw, 2.6rem);
+    }
+
+    .view-section {
+        padding: 8.5rem 1.2rem 4rem 1.2rem;
+    }
+
+    .works-tab-btn {
+        font-size: 1.1rem;
+    }
+}
+
+/* 15. ACCESSIBILITY — PREFERS-REDUCED-MOTION */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .fullscreen-overlay {
+        transition: opacity 0.01ms !important;
+    }
+
+    .work-expandable {
+        transition: none !important;
     }
 }

@@ -1,6 +1,8 @@
 # Environment / secrets
 .env
 portfolio.env
+js/config.js
+scripts/seed_sanity.py
 
 # Local agent/tool files
 .agents/
@@ -15,3 +17,6 @@ walkthrough.md
 
 # VS Code
 .vscode/
+
+# Private documents
+asset/Agenda.pdf

@@ -34,8 +34,8 @@ const SanityClient = {
 
         // Fallback Bio
         return {
-            title: "About Bilecolar",
-            text: "Bruno Cusumano, in arte Bilecolar, è un Sound Designer e Music Producer la cui ricerca esplora i territori dell'acustica spaziale, del sound design sperimentale per arti visive e della composizione acusmatica. Attraverso sintesi modulare, elaborazione di registrazioni sul campo ed esplorazioni timbre/spazio, crea ambienti sonori immersivi e strutture compositive ad alta densità dinamica.",
+            title: "About bilecolar",
+            text: "Bruno Cusumano, in arte bilecolar, è un Sound Designer e Music Producer la cui ricerca esplora i territori dell'acustica spaziale, del sound design sperimentale per arti visive e della composizione acusmatica. Attraverso sintesi modulare, elaborazione di registrazioni sul campo ed esplorazioni timbre/spazio, crea ambienti sonori immersivi e strutture compositive ad alta densità dinamica.",
             imageUrl: "asset/pics/foto_bio.jpg"
         };
     },
@@ -47,6 +47,7 @@ const SanityClient = {
             title,
             section,
             description,
+            date,
             link,
             "coverUrl": cover.asset->url
         }`;
@@ -58,22 +59,25 @@ const SanityClient = {
             {
                 _id: "w1",
                 title: "Brassage",
+                date: "2026",
                 section: "Acousmatic",
                 description: "Composizione acusmatica fondata sulla tecnica del granulator brassage: micro-frammenti di materia sonora vengono ricombinati in tessiture timbriche in continua evoluzione spaziale.",
-                link: "https://soundcloud.com/brunocusumano",
+                link: "https://on.soundcloud.com/YxACer4QDmnk7pfU3M",
                 coverUrl: "asset/pics/Brassage.jpg"
             },
             {
                 _id: "w2",
                 title: "Sinestesia #1",
+                date: "2025",
                 section: "Acousmatic",
                 description: "Studio elettroacustico sulla percezione tattile del suono. Frequenze sub-basse e transitori acuti dialogano in uno spazio tridimensionale ad alta definizione drammaturgica.",
-                link: "https://soundcloud.com/brunocusumano",
+                link: "https://on.soundcloud.com/YxACer4QDmnk7pfU3M",
                 coverUrl: "asset/pics/Sinestesia.jpg"
             },
             {
                 _id: "w3",
                 title: "I'm learning...",
+                date: "2024",
                 section: "av",
                 description: "Performance Audio/Video interattiva che indaga l'apprendimento computazionale e il rapporto percettivo uomo-macchina tramite frammenti video e sintesi granulare in tempo reale.",
                 link: "https://instagram.com/bilecolar",
@@ -82,6 +86,7 @@ const SanityClient = {
             {
                 _id: "w4",
                 title: "Tempo Reale Collection",
+                date: "2025",
                 section: "Release",
                 description: "Raccolta discografica pubblicata in collaborazione con il centro di ricerca sonorio Tempo Reale. Un catalogo di opere per nastro, elettronica dal vivo e ambienti acusmatici.",
                 link: "https://bandcamp.com/bilecolar",
